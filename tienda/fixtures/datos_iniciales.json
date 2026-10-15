@@ -1,0 +1,1143 @@
+[
+{
+  "model": "tienda.zona",
+  "pk": 1,
+  "fields": {
+    "numero": 3,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 2,
+  "fields": {
+    "numero": 7,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 3,
+  "fields": {
+    "numero": 8,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 4,
+  "fields": {
+    "numero": 11,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 5,
+  "fields": {
+    "numero": 12,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 6,
+  "fields": {
+    "numero": 19,
+    "municipio": "GUATEMALA"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 7,
+  "fields": {
+    "numero": 4,
+    "municipio": "MIXCO"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 8,
+  "fields": {
+    "numero": 6,
+    "municipio": "MIXCO"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 9,
+  "fields": {
+    "numero": 7,
+    "municipio": "MIXCO"
+  }
+},
+{
+  "model": "tienda.zona",
+  "pk": 10,
+  "fields": {
+    "numero": 11,
+    "municipio": "MIXCO"
+  }
+},
+{
+  "model": "tienda.mercado",
+  "pk": 1,
+  "fields": {
+    "nombre": "Mercado El Guarda",
+    "direccion": "Colonia El Progreso, zona 11",
+    "zona": 4,
+    "horario": "",
+    "activo": true
+  }
+},
+{
+  "model": "tienda.mercado",
+  "pk": 2,
+  "fields": {
+    "nombre": "Mercado La Florida",
+    "direccion": "Zona 19",
+    "zona": 6,
+    "horario": "",
+    "activo": true
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 1,
+  "fields": {
+    "mercado": 1,
+    "zona": 1,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 2,
+  "fields": {
+    "mercado": 1,
+    "zona": 2,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 3,
+  "fields": {
+    "mercado": 1,
+    "zona": 3,
+    "tarifa_envio": "12.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 4,
+  "fields": {
+    "mercado": 1,
+    "zona": 4,
+    "tarifa_envio": "10.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 5,
+  "fields": {
+    "mercado": 1,
+    "zona": 5,
+    "tarifa_envio": "12.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 6,
+  "fields": {
+    "mercado": 2,
+    "zona": 6,
+    "tarifa_envio": "10.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 7,
+  "fields": {
+    "mercado": 2,
+    "zona": 2,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 8,
+  "fields": {
+    "mercado": 2,
+    "zona": 7,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 9,
+  "fields": {
+    "mercado": 2,
+    "zona": 8,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 10,
+  "fields": {
+    "mercado": 2,
+    "zona": 9,
+    "tarifa_envio": "15.00"
+  }
+},
+{
+  "model": "tienda.mercadozona",
+  "pk": 11,
+  "fields": {
+    "mercado": 2,
+    "zona": 10,
+    "tarifa_envio": "18.00"
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 1,
+  "fields": {
+    "nombre": "Frutas",
+    "orden": 1
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 2,
+  "fields": {
+    "nombre": "Verduras",
+    "orden": 2
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 3,
+  "fields": {
+    "nombre": "Carnes",
+    "orden": 3
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 4,
+  "fields": {
+    "nombre": "Granos",
+    "orden": 4
+  }
+},
+{
+  "model": "tienda.categoria",
+  "pk": 5,
+  "fields": {
+    "nombre": "Abarrotes",
+    "orden": 5
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 1,
+  "fields": {
+    "nombre": "Manzana",
+    "categoria": 1,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 2,
+  "fields": {
+    "nombre": "Banano",
+    "categoria": 1,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 3,
+  "fields": {
+    "nombre": "Naranja",
+    "categoria": 1,
+    "unidad": "DOCENA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 4,
+  "fields": {
+    "nombre": "Mandarina",
+    "categoria": 1,
+    "unidad": "DOCENA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 5,
+  "fields": {
+    "nombre": "Papaya",
+    "categoria": 1,
+    "unidad": "UNIDAD",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 6,
+  "fields": {
+    "nombre": "Piña",
+    "categoria": 1,
+    "unidad": "UNIDAD",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 7,
+  "fields": {
+    "nombre": "Sandía",
+    "categoria": 1,
+    "unidad": "UNIDAD",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 8,
+  "fields": {
+    "nombre": "Tomate",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 9,
+  "fields": {
+    "nombre": "Cebolla",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 10,
+  "fields": {
+    "nombre": "Papa",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 11,
+  "fields": {
+    "nombre": "Zanahoria",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 12,
+  "fields": {
+    "nombre": "Chile pimiento",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 13,
+  "fields": {
+    "nombre": "Brócoli",
+    "categoria": 2,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 14,
+  "fields": {
+    "nombre": "Carne de res",
+    "categoria": 3,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 15,
+  "fields": {
+    "nombre": "Carne molida",
+    "categoria": 3,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 16,
+  "fields": {
+    "nombre": "Carne de cerdo",
+    "categoria": 3,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 17,
+  "fields": {
+    "nombre": "Pollo",
+    "categoria": 3,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 18,
+  "fields": {
+    "nombre": "Costilla de cerdo",
+    "categoria": 3,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 19,
+  "fields": {
+    "nombre": "Frijol negro",
+    "categoria": 4,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 20,
+  "fields": {
+    "nombre": "Frijol rojo",
+    "categoria": 4,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 21,
+  "fields": {
+    "nombre": "Arroz",
+    "categoria": 4,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 22,
+  "fields": {
+    "nombre": "Maíz",
+    "categoria": 4,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 23,
+  "fields": {
+    "nombre": "Garbanzos",
+    "categoria": 4,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 24,
+  "fields": {
+    "nombre": "Aceite",
+    "categoria": 5,
+    "unidad": "LITRO",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 25,
+  "fields": {
+    "nombre": "Azúcar",
+    "categoria": 5,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 26,
+  "fields": {
+    "nombre": "Sal",
+    "categoria": 5,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 27,
+  "fields": {
+    "nombre": "Harina",
+    "categoria": 5,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 28,
+  "fields": {
+    "nombre": "Café",
+    "categoria": 5,
+    "unidad": "LIBRA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 29,
+  "fields": {
+    "nombre": "Leche",
+    "categoria": 5,
+    "unidad": "LITRO",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.producto",
+  "pk": 30,
+  "fields": {
+    "nombre": "Huevos",
+    "categoria": 5,
+    "unidad": "DOCENA",
+    "descripcion": ""
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 1,
+  "fields": {
+    "producto": 1,
+    "mercado": 1,
+    "precio": "8.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 2,
+  "fields": {
+    "producto": 1,
+    "mercado": 2,
+    "precio": "9.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 3,
+  "fields": {
+    "producto": 2,
+    "mercado": 1,
+    "precio": "3.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 4,
+  "fields": {
+    "producto": 2,
+    "mercado": 2,
+    "precio": "3.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 5,
+  "fields": {
+    "producto": 3,
+    "mercado": 1,
+    "precio": "12.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 6,
+  "fields": {
+    "producto": 3,
+    "mercado": 2,
+    "precio": "10.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 7,
+  "fields": {
+    "producto": 4,
+    "mercado": 1,
+    "precio": "15.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 8,
+  "fields": {
+    "producto": 4,
+    "mercado": 2,
+    "precio": "16.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 9,
+  "fields": {
+    "producto": 5,
+    "mercado": 1,
+    "precio": "12.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 10,
+  "fields": {
+    "producto": 5,
+    "mercado": 2,
+    "precio": "11.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 11,
+  "fields": {
+    "producto": 6,
+    "mercado": 1,
+    "precio": "10.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 12,
+  "fields": {
+    "producto": 6,
+    "mercado": 2,
+    "precio": "12.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 13,
+  "fields": {
+    "producto": 7,
+    "mercado": 1,
+    "precio": "20.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 14,
+  "fields": {
+    "producto": 7,
+    "mercado": 2,
+    "precio": "18.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 15,
+  "fields": {
+    "producto": 8,
+    "mercado": 1,
+    "precio": "4.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 16,
+  "fields": {
+    "producto": 8,
+    "mercado": 2,
+    "precio": "4.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 17,
+  "fields": {
+    "producto": 9,
+    "mercado": 1,
+    "precio": "3.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 18,
+  "fields": {
+    "producto": 9,
+    "mercado": 2,
+    "precio": "3.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 19,
+  "fields": {
+    "producto": 10,
+    "mercado": 1,
+    "precio": "3.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 20,
+  "fields": {
+    "producto": 10,
+    "mercado": 2,
+    "precio": "3.25",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 21,
+  "fields": {
+    "producto": 11,
+    "mercado": 1,
+    "precio": "2.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 22,
+  "fields": {
+    "producto": 11,
+    "mercado": 2,
+    "precio": "3.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 23,
+  "fields": {
+    "producto": 12,
+    "mercado": 1,
+    "precio": "5.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 24,
+  "fields": {
+    "producto": 12,
+    "mercado": 2,
+    "precio": "4.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 25,
+  "fields": {
+    "producto": 13,
+    "mercado": 1,
+    "precio": "6.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 26,
+  "fields": {
+    "producto": 13,
+    "mercado": 2,
+    "precio": "6.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 27,
+  "fields": {
+    "producto": 14,
+    "mercado": 1,
+    "precio": "32.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 28,
+  "fields": {
+    "producto": 14,
+    "mercado": 2,
+    "precio": "34.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 29,
+  "fields": {
+    "producto": 15,
+    "mercado": 1,
+    "precio": "30.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 30,
+  "fields": {
+    "producto": 15,
+    "mercado": 2,
+    "precio": "28.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 31,
+  "fields": {
+    "producto": 16,
+    "mercado": 1,
+    "precio": "24.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 32,
+  "fields": {
+    "producto": 16,
+    "mercado": 2,
+    "precio": "25.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 33,
+  "fields": {
+    "producto": 17,
+    "mercado": 1,
+    "precio": "14.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 34,
+  "fields": {
+    "producto": 17,
+    "mercado": 2,
+    "precio": "15.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 35,
+  "fields": {
+    "producto": 18,
+    "mercado": 1,
+    "precio": "26.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 36,
+  "fields": {
+    "producto": 18,
+    "mercado": 2,
+    "precio": "27.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 37,
+  "fields": {
+    "producto": 19,
+    "mercado": 1,
+    "precio": "7.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 38,
+  "fields": {
+    "producto": 19,
+    "mercado": 2,
+    "precio": "7.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 39,
+  "fields": {
+    "producto": 20,
+    "mercado": 1,
+    "precio": "8.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 40,
+  "fields": {
+    "producto": 20,
+    "mercado": 2,
+    "precio": "7.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 41,
+  "fields": {
+    "producto": 21,
+    "mercado": 1,
+    "precio": "4.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 42,
+  "fields": {
+    "producto": 21,
+    "mercado": 2,
+    "precio": "4.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 43,
+  "fields": {
+    "producto": 22,
+    "mercado": 1,
+    "precio": "2.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 44,
+  "fields": {
+    "producto": 22,
+    "mercado": 2,
+    "precio": "2.75",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 45,
+  "fields": {
+    "producto": 23,
+    "mercado": 1,
+    "precio": "9.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 46,
+  "fields": {
+    "producto": 23,
+    "mercado": 2,
+    "precio": "9.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 47,
+  "fields": {
+    "producto": 24,
+    "mercado": 1,
+    "precio": "22.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 48,
+  "fields": {
+    "producto": 24,
+    "mercado": 2,
+    "precio": "24.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 49,
+  "fields": {
+    "producto": 25,
+    "mercado": 1,
+    "precio": "4.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 50,
+  "fields": {
+    "producto": 25,
+    "mercado": 2,
+    "precio": "4.25",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 51,
+  "fields": {
+    "producto": 26,
+    "mercado": 1,
+    "precio": "2.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 52,
+  "fields": {
+    "producto": 26,
+    "mercado": 2,
+    "precio": "2.25",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 53,
+  "fields": {
+    "producto": 27,
+    "mercado": 1,
+    "precio": "4.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 54,
+  "fields": {
+    "producto": 27,
+    "mercado": 2,
+    "precio": "3.75",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 55,
+  "fields": {
+    "producto": 28,
+    "mercado": 1,
+    "precio": "25.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 56,
+  "fields": {
+    "producto": 28,
+    "mercado": 2,
+    "precio": "27.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 57,
+  "fields": {
+    "producto": 29,
+    "mercado": 1,
+    "precio": "10.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 58,
+  "fields": {
+    "producto": 29,
+    "mercado": 2,
+    "precio": "9.50",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 59,
+  "fields": {
+    "producto": 30,
+    "mercado": 1,
+    "precio": "22.00",
+    "disponible": true
+  }
+},
+{
+  "model": "tienda.productomercado",
+  "pk": 60,
+  "fields": {
+    "producto": 30,
+    "mercado": 2,
+    "precio": "24.00",
+    "disponible": true
+  }
+}
+]
