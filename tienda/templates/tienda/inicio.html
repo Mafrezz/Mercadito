@@ -1,0 +1,39 @@
+{% extends "tienda/base.html" %}
+
+{% block titulo %}Mercadito: el mercado de tu zona en tu puerta{% endblock %}
+
+{% block contenido %}
+<section class="portada">
+  <h1>El mercado de tu zona, en tu puerta.</h1>
+  <p class="intro">Dinos dónde vives y te mostramos los mercados que te entregan.</p>
+
+  <form class="buscador" action="{% url 'tienda:mercados' %}" method="get">
+    <label for="zona">Tu zona</label>
+    <div class="buscador-fila">
+      <select id="zona" name="zona" required>
+        <option value="">Elige tu zona</option>
+        {% for municipio, zonas in grupos.items %}
+          <optgroup label="{{ municipio }}">
+            {% for zona in zonas %}
+              <option value="{{ zona.id }}">Zona {{ zona.numero }}</option>
+            {% endfor %}
+          </optgroup>
+        {% endfor %}
+      </select>
+      <button type="submit" class="boton">Ver mercados</button>
+    </div>
+  </form>
+</section>
+
+<section aria-labelledby="titulo-categorias">
+  <h2 id="titulo-categorias" class="subtitulo">Lo que encuentras</h2>
+  <ul class="categorias-fila">
+    {% for categoria in categorias %}
+      <li class="cat-{{ categoria.orden }}">
+        <span class="bolita bolita-grande">{{ categoria.nombre|slice:":1" }}</span>
+        <span>{{ categoria.nombre }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

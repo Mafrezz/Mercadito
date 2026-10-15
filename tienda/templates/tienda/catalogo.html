@@ -1,0 +1,46 @@
+{% extends "tienda/base.html" %}
+
+{% block titulo %}{{ mercado.nombre }} | Mercadito{% endblock %}
+
+{% block contenido %}
+<a class="volver" href="{% url 'tienda:mercados' %}">Cambiar mercado</a>
+
+<div class="encabezado-mercado">
+  <h1 class="titulo-pagina">{{ mercado.nombre }}</h1>
+  <p class="envio">
+    Entrega en {{ cobertura.zona }}:
+    <strong>Q{{ cobertura.tarifa_envio|floatformat:"2u" }}</strong> de envío
+  </p>
+</div>
+
+<nav class="filtros" aria-label="Categorías">
+  <a href="{% url 'tienda:catalogo' mercado.id %}"
+     class="filtro {% if not categoria_activa %}activo{% endif %}">Todo</a>
+  {% for categoria in categorias %}
+    <a href="{% url 'tienda:catalogo' mercado.id %}?cat={{ categoria.id }}"
+       class="filtro cat-{{ categoria.orden }} {% if categoria_activa == categoria.id %}activo{% endif %}">
+      <span class="bolita">{{ categoria.nombre|slice:":1" }}</span>{{ categoria.nombre }}
+    </a>
+  {% endfor %}
+</nav>
+
+{% for categoria, ofertas in secciones %}
+  <section class="seccion cat-{{ categoria.orden }}">
+    <h2><span class="bolita bolita-grande">{{ categoria.nombre|slice:":1" }}</span>{{ categoria.nombre }}</h2>
+    <ul class="productos">
+      {% for oferta in ofertas %}
+        <li>
+          <span class="prod-nombre">{{ oferta.producto.nombre }}</span>
+          <span class="puntos" aria-hidden="true"></span>
+          <span class="precio">Q{{ oferta.precio|floatformat:"2u" }} <small>por {{ oferta.producto.get_unidad_display }}</small></span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% empty %}
+  <div class="vacio">
+    <p>Este mercado no tiene productos disponibles en esta categoría.</p>
+    <a class="boton boton-claro" href="{% url 'tienda:catalogo' mercado.id %}">Ver todos los productos</a>
+  </div>
+{% endfor %}
+{% endblock %}

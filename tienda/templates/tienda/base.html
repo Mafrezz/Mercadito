@@ -1,0 +1,29 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titulo %}Mercadito{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'tienda/css/estilos.css' %}">
+</head>
+<body>
+  <div class="toldo" aria-hidden="true">
+    <span class="cat-1"></span><span class="cat-2"></span><span class="cat-3"></span><span class="cat-4"></span><span class="cat-5"></span>
+  </div>
+
+  <header class="cabecera">
+    <a class="marca" href="{% url 'tienda:inicio' %}">Mercadito</a>
+  </header>
+
+  <main class="contenedor">
+    {% block contenido %}{% endblock %}
+  </main>
+
+  <footer class="pie">
+    <p>Pagas al recibir tu pedido.</p>
+  </footer>
+</body>
+</html>

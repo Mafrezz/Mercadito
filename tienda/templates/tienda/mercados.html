@@ -1,0 +1,35 @@
+{% extends "tienda/base.html" %}
+
+{% block titulo %}Mercados en {{ zona }} | Mercadito{% endblock %}
+
+{% block contenido %}
+<a class="volver" href="{% url 'tienda:inicio' %}">Cambiar zona</a>
+
+<h1 class="titulo-pagina">Mercados que entregan en {{ zona }}</h1>
+
+{% if coberturas|length > 1 %}
+  <p class="nota">Los precios cambian de un mercado a otro. Compara antes de elegir.</p>
+{% endif %}
+
+<div class="lista-mercados">
+  {% for cobertura in coberturas %}
+    <article class="mercado">
+      <div class="mercado-info">
+        <h2>{{ cobertura.mercado.nombre }}</h2>
+        {% if cobertura.mercado.direccion %}<p>{{ cobertura.mercado.direccion }}</p>{% endif %}
+        {% if cobertura.mercado.horario %}<p>Horario: {{ cobertura.mercado.horario }}</p>{% endif %}
+      </div>
+      <div class="etiqueta-precio">
+        <span>Envío</span>
+        <strong>Q{{ cobertura.tarifa_envio|floatformat:"2u" }}</strong>
+      </div>
+      <a class="boton" href="{% url 'tienda:catalogo' cobertura.mercado.id %}">Ver productos</a>
+    </article>
+  {% empty %}
+    <div class="vacio">
+      <p>Todavía ningún mercado entrega en {{ zona }}.</p>
+      <a class="boton boton-claro" href="{% url 'tienda:inicio' %}">Probar con otra zona</a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
