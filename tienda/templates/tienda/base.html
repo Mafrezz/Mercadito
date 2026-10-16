@@ -10,20 +10,40 @@
   <link rel="stylesheet" href="{% static 'tienda/css/estilos.css' %}">
 </head>
 <body>
+  <a class="salto" href="#contenido">Ir al contenido</a>
   <div class="toldo" aria-hidden="true">
     <span class="cat-1"></span><span class="cat-2"></span><span class="cat-3"></span><span class="cat-4"></span><span class="cat-5"></span>
   </div>
-
   <header class="cabecera">
     <a class="marca" href="{% url 'tienda:inicio' %}">Mercadito</a>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a href="{% url 'tienda:inicio' %}">Inicio</a>
+      {% if request.user.is_authenticated %}
+        <a href="{% url 'tienda:carritos' %}">Mis carritos</a>
+        <a href="{% url 'tienda:pedidos' %}">Mis pedidos</a>
+        {% if request.user.is_staff %}<a href="{% url 'admin:index' %}">Administración</a>{% endif %}
+        <form action="{% url 'tienda:salir' %}" method="post" class="form-salir">
+          {% csrf_token %}<button class="enlace-boton" type="submit">Cerrar sesión</button>
+        </form>
+      {% else %}
+        <a href="{% url 'tienda:ingresar' %}">Iniciar sesión</a>
+        <a href="{% url 'tienda:registro' %}">Registrarme</a>
+      {% endif %}
+    </nav>
   </header>
-
-  <main class="contenedor">
+  <main id="contenido" class="contenedor">
+    {% if request.user.is_authenticated %}
+      <p class="saludo">Hola, {{ request.user.get_short_name|default:request.user.username }}.</p>
+    {% endif %}
+    {% if messages %}
+      <ul class="mensajes" aria-live="polite">
+      {% for message in messages %}
+        <li class="mensaje {{ message.tags }}" {% if message.tags == 'error' %}role="alert"{% else %}role="status"{% endif %}>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
     {% block contenido %}{% endblock %}
   </main>
-
-  <footer class="pie">
-    <p>Pagas al recibir tu pedido.</p>
-  </footer>
+  <footer class="pie"><p>Pagas al recibir tu pedido.</p></footer>
 </body>
 </html>

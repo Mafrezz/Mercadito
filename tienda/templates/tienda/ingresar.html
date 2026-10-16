@@ -1,0 +1,14 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Iniciar sesión | Mercadito{% endblock %}
+{% block contenido %}
+<section class="panel panel-cuenta">
+  <h1 class="titulo-pagina">Inicia sesión</h1>
+  <p class="nota">Usa tu nombre de usuario y contraseña.</p>
+  <form method="post" class="formulario">
+    {% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+    {% include "tienda/_campos_formulario.html" %}
+    <button type="submit" class="boton">Entrar</button>
+  </form>
+  <p>¿Es tu primera compra? <a href="{% url 'tienda:registro' %}?next={{ next|urlencode }}">Crea una cuenta</a>.</p>
+</section>
+{% endblock %}

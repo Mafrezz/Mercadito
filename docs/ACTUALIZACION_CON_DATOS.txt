@@ -1,0 +1,3 @@
+OK: actualización de 0001_initial a 0002_completar_compra en SQLite.
+Se conservaron catálogo original, usuario, carrito, pedido e importe histórico.
+El pedido anterior tiene token_confirmacion NULL y continúa siendo consultable.

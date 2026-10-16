@@ -1,0 +1,4 @@
+Registro e inicio de sesión con formularios y CSRF activos: OK (Django Client)
+Seleccionar zona, catálogo, agregar y actualizar cantidad: OK
+Confirmación, persistencia del pedido y vaciado del carrito: OK
+Cierre y nuevo inicio de sesión conservan el historial: OK

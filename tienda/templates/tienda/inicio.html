@@ -15,7 +15,7 @@
         {% for municipio, zonas in grupos.items %}
           <optgroup label="{{ municipio }}">
             {% for zona in zonas %}
-              <option value="{{ zona.id }}">Zona {{ zona.numero }}</option>
+              <option value="{{ zona.id }}" {% if zona_actual.pk == zona.pk %}selected{% endif %}>Zona {{ zona.numero }}</option>
             {% endfor %}
           </optgroup>
         {% endfor %}

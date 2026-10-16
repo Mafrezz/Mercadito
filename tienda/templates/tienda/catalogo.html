@@ -1,46 +1,47 @@
 {% extends "tienda/base.html" %}
-
 {% block titulo %}{{ mercado.nombre }} | Mercadito{% endblock %}
-
 {% block contenido %}
 <a class="volver" href="{% url 'tienda:mercados' %}">Cambiar mercado</a>
-
 <div class="encabezado-mercado">
   <h1 class="titulo-pagina">{{ mercado.nombre }}</h1>
-  <p class="envio">
-    Entrega en {{ cobertura.zona }}:
-    <strong>Q{{ cobertura.tarifa_envio|floatformat:"2u" }}</strong> de envío
-  </p>
+  <p class="envio">Entrega en {{ cobertura.zona }}: <strong>Q{{ cobertura.tarifa_envio|floatformat:"2u" }}</strong> de envío.</p>
+  {% if request.user.is_authenticated %}
+    <a class="boton boton-claro acceso-carrito" href="{% url 'tienda:ver_carrito' mercado.id %}">Ver carrito de este mercado</a>
+  {% else %}
+    <p class="nota">Puedes consultar el catálogo sin una cuenta. Inicia sesión para comprar.</p>
+  {% endif %}
 </div>
-
 <nav class="filtros" aria-label="Categorías">
-  <a href="{% url 'tienda:catalogo' mercado.id %}"
-     class="filtro {% if not categoria_activa %}activo{% endif %}">Todo</a>
+  <a href="{% url 'tienda:catalogo' mercado.id %}" class="filtro {% if not categoria_activa %}activo{% endif %}">Todo</a>
   {% for categoria in categorias %}
-    <a href="{% url 'tienda:catalogo' mercado.id %}?cat={{ categoria.id }}"
-       class="filtro cat-{{ categoria.orden }} {% if categoria_activa == categoria.id %}activo{% endif %}">
+    <a href="{% url 'tienda:catalogo' mercado.id %}?cat={{ categoria.id }}" class="filtro cat-{{ categoria.orden }} {% if categoria_activa == categoria.id %}activo{% endif %}">
       <span class="bolita">{{ categoria.nombre|slice:":1" }}</span>{{ categoria.nombre }}
     </a>
   {% endfor %}
 </nav>
-
 {% for categoria, ofertas in secciones %}
-  <section class="seccion cat-{{ categoria.orden }}">
-    <h2><span class="bolita bolita-grande">{{ categoria.nombre|slice:":1" }}</span>{{ categoria.nombre }}</h2>
-    <ul class="productos">
-      {% for oferta in ofertas %}
-        <li>
-          <span class="prod-nombre">{{ oferta.producto.nombre }}</span>
-          <span class="puntos" aria-hidden="true"></span>
-          <span class="precio">Q{{ oferta.precio|floatformat:"2u" }} <small>por {{ oferta.producto.get_unidad_display }}</small></span>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
+<section class="seccion cat-{{ categoria.orden }}">
+  <h2><span class="bolita bolita-grande">{{ categoria.nombre|slice:":1" }}</span>{{ categoria.nombre }}</h2>
+  <ul class="productos">
+  {% for oferta in ofertas %}
+    <li class="producto-compra" id="producto-{{ oferta.pk }}">
+      <div><span class="prod-nombre">{{ oferta.producto.nombre }}</span>{% if oferta.producto.descripcion %}<p class="descripcion">{{ oferta.producto.descripcion }}</p>{% endif %}</div>
+      <span class="precio">Q{{ oferta.precio|floatformat:"2u" }} <small>por {{ oferta.producto.get_unidad_display }}</small></span>
+      {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'tienda:agregar' oferta.pk %}" class="compra-form">
+          {% csrf_token %}
+          <label class="solo-lector" for="{{ oferta.formulario.cantidad.id_for_label }}">Cantidad de {{ oferta.producto.nombre }}</label>
+          <div class="cantidad-fila">{{ oferta.formulario.cantidad }}<button type="submit" class="boton boton-pequeno">Agregar</button></div>
+          {{ oferta.formulario.cantidad.errors }}{{ oferta.formulario.non_field_errors }}
+        </form>
+      {% else %}
+        <a class="boton boton-claro boton-pequeno" href="{% url 'tienda:ingresar' %}?next={{ request.get_full_path|urlencode }}">Iniciar sesión</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
 {% empty %}
-  <div class="vacio">
-    <p>Este mercado no tiene productos disponibles en esta categoría.</p>
-    <a class="boton boton-claro" href="{% url 'tienda:catalogo' mercado.id %}">Ver todos los productos</a>
-  </div>
+  <div class="vacio"><p>Este mercado no tiene productos disponibles en esta categoría.</p><a class="boton boton-claro" href="{% url 'tienda:catalogo' mercado.id %}">Ver todos los productos</a></div>
 {% endfor %}
 {% endblock %}

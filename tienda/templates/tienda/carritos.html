@@ -1,0 +1,20 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Mis carritos | Mercadito{% endblock %}
+{% block contenido %}
+<h1 class="titulo-pagina">Mis carritos</h1>
+<p class="nota">Cada mercado tiene su propio carrito y su propia tarifa de envío.</p>
+{% if zona %}<p>Tu zona actual: <strong>{{ zona }}</strong>. <a href="{% url 'tienda:inicio' %}">Cambiar zona</a></p>{% endif %}
+<div class="lista-mercados">
+{% for resumen in resumenes %}
+  <article class="panel">
+    <h2>{{ resumen.mercado.nombre }}</h2>
+    <p>{{ resumen.lineas|length }} producto{{ resumen.lineas|length|pluralize }} diferente{{ resumen.lineas|length|pluralize }}.</p>
+    {% if resumen.subtotal is not None %}<p>Subtotal: <strong>Q{{ resumen.subtotal|floatformat:"2u" }}</strong></p>{% else %}<p class="texto-error">Hay productos o cantidades que debes revisar.</p>{% endif %}
+    {% if resumen.aviso %}<p class="nota">{{ resumen.aviso }}</p>{% endif %}
+    <a class="boton" href="{% url 'tienda:ver_carrito' resumen.mercado.pk %}">Abrir carrito</a>
+  </article>
+{% empty %}
+  <div class="vacio"><p>Todavía no tienes productos en tus carritos.</p><a class="boton" href="{% url 'tienda:inicio' %}">Buscar un mercado</a></div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+Comparación del código entregado con Mercadito.rar.
+No se listan entorno virtual, Git, cachés ni .env.
+
+MODIFICADO  .gitignore
+NUEVO       LEEME_ACTUALIZACION.txt
+NUEVO       README.md
+NUEVO       VERSION_ACTUALIZACION.txt
+NUEVO       docs/ACTUALIZACION_CON_DATOS.txt
+NUEVO       docs/CAMBIOS.md
+NUEVO       docs/PRUEBAS.md
+NUEVO       docs/RECORRIDO_CSRF.txt
+NUEVO       docs/RESULTADO_PRUEBAS.txt
+NUEVO       docs/REVISION_VISUAL.txt
+MODIFICADO  mercadito/settings.py
+NUEVO       mercadito/settings_pruebas.py
+MODIFICADO  tienda/admin.py
+NUEVO       tienda/forms.py
+NUEVO       tienda/middleware.py
+NUEVO       tienda/migrations/0002_completar_compra.py
+MODIFICADO  tienda/models.py
+NUEVO       tienda/servicios.py
+MODIFICADO  tienda/static/tienda/css/estilos.css
+NUEVO       tienda/templates/404.html
+NUEVO       tienda/templates/tienda/_campos_formulario.html
+NUEVO       tienda/templates/tienda/_resumen.html
+MODIFICADO  tienda/templates/tienda/base.html
+NUEVO       tienda/templates/tienda/carrito.html
+NUEVO       tienda/templates/tienda/carritos.html
+MODIFICADO  tienda/templates/tienda/catalogo.html
+NUEVO       tienda/templates/tienda/confirmar.html
+NUEVO       tienda/templates/tienda/detalle_pedido.html
+NUEVO       tienda/templates/tienda/error_base_datos.html
+NUEVO       tienda/templates/tienda/ingresar.html
+MODIFICADO  tienda/templates/tienda/inicio.html
+NUEVO       tienda/templates/tienda/pedidos.html
+NUEVO       tienda/templates/tienda/registro.html
+MODIFICADO  tienda/tests.py
+MODIFICADO  tienda/urls.py
+NUEVO       tienda/validaciones.py
+MODIFICADO  tienda/views.py

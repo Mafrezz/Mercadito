@@ -1,0 +1,14 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Crear cuenta | Mercadito{% endblock %}
+{% block contenido %}
+<section class="panel panel-cuenta">
+  <h1 class="titulo-pagina">Crea tu cuenta</h1>
+  <p class="nota">Guarda tus carritos y consulta tus pedidos.</p>
+  <form method="post" class="formulario">
+    {% csrf_token %}<input type="hidden" name="next" value="{{ next }}">
+    {% include "tienda/_campos_formulario.html" %}
+    <button type="submit" class="boton">Crear cuenta</button>
+  </form>
+  <p>¿Ya tienes cuenta? <a href="{% url 'tienda:ingresar' %}?next={{ next|urlencode }}">Inicia sesión</a>.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,127 @@
+ENTORNO: Linux; Python 3.13; Django 5.2.18; SQLite en memoria.
+COMANDO: python manage.py test tienda --settings=mercadito.settings_pruebas --verbosity 2
+
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Found 88 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, staticfiles
+  Apply all migrations: admin, auth, contenttypes, sessions, tienda
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+  Applying tienda.0001_initial... OK
+  Applying tienda.0002_completar_compra...test_actualizar_invalido_conserva_valor_guardado (tienda.tests.CarritoTest.test_actualizar_invalido_conserva_valor_guardado) ... ok
+test_actualizar_reemplaza_cantidad (tienda.tests.CarritoTest.test_actualizar_reemplaza_cantidad) ... ok
+test_agregar_invalido_mantiene_formulario_y_no_guarda (tienda.tests.CarritoTest.test_agregar_invalido_mantiene_formulario_y_no_guarda) ... ok
+test_agregar_unidades_fraccionarias_falla (tienda.tests.CarritoTest.test_agregar_unidades_fraccionarias_falla) ... ok
+test_agregar_y_repetir_suma_sin_duplicar_fila (tienda.tests.CarritoTest.test_agregar_y_repetir_suma_sin_duplicar_fila) ... ok
+test_csrf_obligatorio (tienda.tests.CarritoTest.test_csrf_obligatorio) ... ok
+test_csrf_valido_permite_comprar (tienda.tests.CarritoTest.test_csrf_valido_permite_comprar) ... ok
+test_lista_carritos_es_privada (tienda.tests.CarritoTest.test_lista_carritos_es_privada) ... ok
+test_mercados_tienen_carritos_independientes (tienda.tests.CarritoTest.test_mercados_tienen_carritos_independientes) ... ok
+test_metodos_de_calculo (tienda.tests.CarritoTest.test_metodos_de_calculo) ... ok
+test_no_agrega_mercado_inactivo (tienda.tests.CarritoTest.test_no_agrega_mercado_inactivo) ... ok
+test_no_agrega_sin_cobertura (tienda.tests.CarritoTest.test_no_agrega_sin_cobertura) ... ok
+test_oferta_no_disponible_no_se_agrega (tienda.tests.CarritoTest.test_oferta_no_disponible_no_se_agrega) ... ok
+test_operaciones_get_no_modifican_carrito (tienda.tests.CarritoTest.test_operaciones_get_no_modifican_carrito) ... ok
+test_producto_retirado_se_muestra_y_se_puede_quitar (tienda.tests.CarritoTest.test_producto_retirado_se_muestra_y_se_puede_quitar) ... ok
+test_quitar_producto (tienda.tests.CarritoTest.test_quitar_producto) ... ok
+test_suma_supera_maximo_no_modifica (tienda.tests.CarritoTest.test_suma_supera_maximo_no_modifica) ... ok
+test_vaciar_no_borra_otro_carrito (tienda.tests.CarritoTest.test_vaciar_no_borra_otro_carrito) ... ok
+test_ver_carrito_vacio_no_crea_objetos (tienda.tests.CarritoTest.test_ver_carrito_vacio_no_crea_objetos) ... ok
+test_login_correcto_y_conserva_zona (tienda.tests.CuentasTest.test_login_correcto_y_conserva_zona) ... ok
+test_login_incorrecto (tienda.tests.CuentasTest.test_login_incorrecto) ... ok
+test_login_no_redirige_a_dominio_externo (tienda.tests.CuentasTest.test_login_no_redirige_a_dominio_externo) ... ok
+test_login_usuario_inactivo (tienda.tests.CuentasTest.test_login_usuario_inactivo) ... ok
+test_logout_solo_post_y_conserva_carrito (tienda.tests.CuentasTest.test_logout_solo_post_y_conserva_carrito) ... ok
+test_registro_con_colision_de_escritura (tienda.tests.CuentasTest.test_registro_con_colision_de_escritura) ... ok
+test_registro_crea_usuario_con_hash_y_limpia_campos (tienda.tests.CuentasTest.test_registro_crea_usuario_con_hash_y_limpia_campos) ... ok
+test_registro_no_redirige_a_dominio_externo (tienda.tests.CuentasTest.test_registro_no_redirige_a_dominio_externo) ... ok
+test_registro_rechaza_campos_vacios (tienda.tests.CuentasTest.test_registro_rechaza_campos_vacios) ... ok
+test_registro_rechaza_contrasena_debil (tienda.tests.CuentasTest.test_registro_rechaza_contrasena_debil) ... ok
+test_registro_rechaza_contrasenas_diferentes (tienda.tests.CuentasTest.test_registro_rechaza_contrasenas_diferentes) ... ok
+test_registro_rechaza_email_invalido (tienda.tests.CuentasTest.test_registro_rechaza_email_invalido) ... ok
+test_usuario_duplicado (tienda.tests.CuentasTest.test_usuario_duplicado) ... ok
+test_fixture_original_y_catalogos (tienda.tests.DatosInicialesTest.test_fixture_original_y_catalogos) ... ok
+test_admin_pedido_solo_permite_cambiar_estado (tienda.tests.IntegridadTest.test_admin_pedido_solo_permite_cambiar_estado) ... ok
+test_admin_puede_abrir_pedido_confirmado (tienda.tests.IntegridadTest.test_admin_puede_abrir_pedido_confirmado) ... ok
+test_base_rechaza_cantidad_cero (tienda.tests.IntegridadTest.test_base_rechaza_cantidad_cero) ... ok
+test_base_rechaza_envio_negativo (tienda.tests.IntegridadTest.test_base_rechaza_envio_negativo) ... ok
+test_base_rechaza_precio_negativo (tienda.tests.IntegridadTest.test_base_rechaza_precio_negativo) ... ok
+test_error_de_conexion_muestra_503_sin_consultar_otra_vez (tienda.tests.IntegridadTest.test_error_de_conexion_muestra_503_sin_consultar_otra_vez) ... ok
+test_metodo_de_oferta_acepta_atributo_decimal_aun_sin_recargar (tienda.tests.IntegridadTest.test_metodo_de_oferta_acepta_atributo_decimal_aun_sin_recargar) ... ok
+test_modelo_fecha_invalida_da_validacion_no_typeerror (tienda.tests.IntegridadTest.test_modelo_fecha_invalida_da_validacion_no_typeerror) ... ok
+test_modelo_rechaza_fracciones_de_unidades (tienda.tests.IntegridadTest.test_modelo_rechaza_fracciones_de_unidades) ... ok
+test_modelo_rechaza_total_inconsistente (tienda.tests.IntegridadTest.test_modelo_rechaza_total_inconsistente) ... ok
+test_catalogo_no_entrega_en_zona (tienda.tests.NavegacionTest.test_catalogo_no_entrega_en_zona) ... ok
+test_catalogo_sin_zona_redirige (tienda.tests.NavegacionTest.test_catalogo_sin_zona_redirige) ... ok
+test_categoria_invalida_no_produce_error (tienda.tests.NavegacionTest.test_categoria_invalida_no_produce_error) ... ok
+test_categorias_mismo_orden_se_agrupan_correctamente (tienda.tests.NavegacionTest.test_categorias_mismo_orden_se_agrupan_correctamente) ... ok
+test_inicio_publico (tienda.tests.NavegacionTest.test_inicio_publico) ... ok
+test_seleccion_zona_y_catalogo_publico (tienda.tests.NavegacionTest.test_seleccion_zona_y_catalogo_publico) ... ok
+test_zona_sin_cobertura (tienda.tests.NavegacionTest.test_zona_sin_cobertura) ... ok
+test_zonas_invalidas_no_producen_error_interno (tienda.tests.NavegacionTest.test_zonas_invalidas_no_producen_error_interno) ... ok
+test_cambio_cantidad_exige_revisar (tienda.tests.PedidosTest.test_cambio_cantidad_exige_revisar) ... ok
+test_cambio_precio_exige_revisar_y_permite_reintentar (tienda.tests.PedidosTest.test_cambio_precio_exige_revisar_y_permite_reintentar) ... ok
+test_cambio_tarifa_exige_revisar (tienda.tests.PedidosTest.test_cambio_tarifa_exige_revisar) ... ok
+test_cambio_zona_exige_revisar (tienda.tests.PedidosTest.test_cambio_zona_exige_revisar) ... ok
+test_carrito_vacio_no_se_confirma (tienda.tests.PedidosTest.test_carrito_vacio_no_se_confirma) ... ok
+test_centavos_en_envio_y_subtotal_no_producen_error (tienda.tests.PedidosTest.test_centavos_en_envio_y_subtotal_no_producen_error) ... ok
+test_cobertura_eliminada_impide_confirmar (tienda.tests.PedidosTest.test_cobertura_eliminada_impide_confirmar) ... ok
+test_confirmacion_completa_y_carrito_vaciado (tienda.tests.PedidosTest.test_confirmacion_completa_y_carrito_vaciado) ... ok
+test_error_en_segundo_item_revierte_pedido_completo (tienda.tests.PedidosTest.test_error_en_segundo_item_revierte_pedido_completo) ... ok
+test_fecha_pasada_y_direccion_vacia_no_guardan (tienda.tests.PedidosTest.test_fecha_pasada_y_direccion_vacia_no_guardan) ... ok
+test_get_no_confirma_y_envio_esta_en_resumen (tienda.tests.PedidosTest.test_get_no_confirma_y_envio_esta_en_resumen) ... ok
+test_historial_y_detalle (tienda.tests.PedidosTest.test_historial_y_detalle) ... ok
+test_importe_mayor_que_capacidad_de_pedido_no_se_guarda (tienda.tests.PedidosTest.test_importe_mayor_que_capacidad_de_pedido_no_se_guarda) ... ok
+test_mercado_inactivo_impide_confirmar (tienda.tests.PedidosTest.test_mercado_inactivo_impide_confirmar) ... ok
+test_misma_confirmacion_no_duplica_y_no_consume_nueva_compra (tienda.tests.PedidosTest.test_misma_confirmacion_no_duplica_y_no_consume_nueva_compra) ... ok
+test_oferta_retirada_impide_confirmar (tienda.tests.PedidosTest.test_oferta_retirada_impide_confirmar) ... ok
+test_pedido_antiguo_puede_cambiar_estado (tienda.tests.PedidosTest.test_pedido_antiguo_puede_cambiar_estado) ... ok
+test_precio_y_total_del_navegador_se_ignoran (tienda.tests.PedidosTest.test_precio_y_total_del_navegador_se_ignoran) ... ok
+test_precios_y_tarifas_posteriores_no_alteran_pedido (tienda.tests.PedidosTest.test_precios_y_tarifas_posteriores_no_alteran_pedido) ... ok
+test_redondeo_individual_coincide_con_total (tienda.tests.PedidosTest.test_redondeo_individual_coincide_con_total) ... ok
+test_token_modificado_no_confirma (tienda.tests.PedidosTest.test_token_modificado_no_confirma) ... ok
+test_token_vencido_no_confirma (tienda.tests.PedidosTest.test_token_vencido_no_confirma) ... ok
+test_anonimo_no_usa_carrito (tienda.tests.PermisosTest.test_anonimo_no_usa_carrito) ... ok
+test_confirmacion_de_otro_carrito_no_funciona (tienda.tests.PermisosTest.test_confirmacion_de_otro_carrito_no_funciona) ... ok
+test_no_se_modifican_items_ajenos (tienda.tests.PermisosTest.test_no_se_modifican_items_ajenos) ... ok
+test_no_se_vacia_o_confirma_carrito_ajeno (tienda.tests.PermisosTest.test_no_se_vacia_o_confirma_carrito_ajeno) ... ok
+test_pedidos_solo_visibles_al_propietario (tienda.tests.PermisosTest.test_pedidos_solo_visibles_al_propietario) ... ok
+test_texto_del_usuario_se_escapa (tienda.tests.PermisosTest.test_texto_del_usuario_se_escapa) ... ok
+test_dos_adiciones_simultaneas_no_pierden_cantidades (tienda.tests.ConcurrenciaPostgreSQLTest.test_dos_adiciones_simultaneas_no_pierden_cantidades) ... skipped 'Requiere PostgreSQL real para probar bloqueos concurrentes.'
+test_dos_confirmaciones_simultaneas_generan_un_pedido (tienda.tests.ConcurrenciaPostgreSQLTest.test_dos_confirmaciones_simultaneas_generan_un_pedido) ... skipped 'Requiere PostgreSQL real para probar bloqueos concurrentes.'
+test_acepta_hoy_y_limpia_direccion (tienda.tests.FormulariosTest.test_acepta_hoy_y_limpia_direccion) ... ok
+test_cantidades_invalidas (tienda.tests.FormulariosTest.test_cantidades_invalidas) ... ok
+test_direccion_vacia_corta_y_larga (tienda.tests.FormulariosTest.test_direccion_vacia_corta_y_larga) ... ok
+test_fecha_pasada_o_inexistente (tienda.tests.FormulariosTest.test_fecha_pasada_o_inexistente) ... ok
+test_fracciones_libras_y_litros (tienda.tests.FormulariosTest.test_fracciones_libras_y_litros) ... ok
+test_importes_redondeados_a_centavos (tienda.tests.FormulariosTest.test_importes_redondeados_a_centavos) ... ok
+test_no_fracciones_unidades_y_docenas (tienda.tests.FormulariosTest.test_no_fracciones_unidades_y_docenas) ... ok
+
+----------------------------------------------------------------------
+Ran 88 tests in 1.995s
+
+OK (skipped=2)
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+ OK
+System check identified no issues (0 silenced).

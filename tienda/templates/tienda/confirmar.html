@@ -1,0 +1,27 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Confirmar pedido | Mercadito{% endblock %}
+{% block contenido %}
+<a class="volver" href="{% url 'tienda:ver_carrito' mercado.pk %}">Volver al carrito</a>
+<h1 class="titulo-pagina">Confirma tu pedido</h1>
+<p class="nota">{{ mercado.nombre }} · {{ zona }}</p>
+<div class="compra-layout">
+  <section class="panel">
+    <h2>Datos de entrega</h2>
+    <p>Entregaremos en <strong>{{ zona }}</strong>. <a href="{% url 'tienda:inicio' %}">Cambiar zona</a></p>
+    <form method="post" class="formulario">
+      {% csrf_token %}
+      {% include "tienda/_campos_formulario.html" %}
+      <div class="aviso-pago"><strong>Pago contra entrega</strong><p>No se solicita tarjeta ni se realiza un cobro en línea.</p></div>
+      <button type="submit" class="boton ancho">Confirmar pedido · Q{{ total|floatformat:"2u" }}</button>
+    </form>
+  </section>
+  <aside class="panel resumen">
+    <h2>Tu compra</h2>
+    <ul class="detalle-breve">
+      {% for linea in lineas %}<li><span>{{ linea.producto.nombre }} <small>{{ linea.cantidad|floatformat:"-2u" }} × Q{{ linea.precio_unitario|floatformat:"2u" }}</small></span><strong>Q{{ linea.subtotal|floatformat:"2u" }}</strong></li>{% endfor %}
+    </ul>
+    {% include "tienda/_resumen.html" %}
+    <p class="nota">Revisa los importes y tu dirección antes de confirmar.</p>
+  </aside>
+</div>
+{% endblock %}

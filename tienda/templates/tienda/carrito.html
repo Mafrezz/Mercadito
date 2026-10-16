@@ -1,0 +1,41 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Carrito · {{ mercado.nombre }} | Mercadito{% endblock %}
+{% block contenido %}
+<a class="volver" href="{% url 'tienda:carritos' %}">Ver mis carritos</a>
+<h1 class="titulo-pagina">Tu carrito</h1>
+<p class="nota">{{ mercado.nombre }}</p>
+{% if lineas %}
+  <div class="compra-layout">
+    <div class="lista-items">
+    {% for linea in lineas %}
+      <article class="panel item-carrito">
+        <div class="item-encabezado"><h2>{{ linea.producto.nombre }}</h2><strong>{% if linea.subtotal is not None %}Q{{ linea.subtotal|floatformat:"2u" }}{% else %}Por revisar{% endif %}</strong></div>
+        {% if linea.precio_unitario is not None %}<p class="nota">Q{{ linea.precio_unitario|floatformat:"2u" }} por {{ linea.producto.get_unidad_display }}</p>{% endif %}
+        {% if linea.error %}<p class="texto-error" role="alert">{{ linea.error }}</p>{% endif %}
+        <div class="item-acciones">
+          <form method="post" action="{% url 'tienda:cambiar_cantidad' linea.item.pk %}">
+            {% csrf_token %}<label for="{{ linea.formulario.cantidad.id_for_label }}">Cantidad</label>
+            <div class="cantidad-fila">{{ linea.formulario.cantidad }}<button type="submit" class="boton boton-claro boton-pequeno">Actualizar</button></div>
+            {{ linea.formulario.cantidad.errors }}{{ linea.formulario.non_field_errors }}
+          </form>
+          <form method="post" action="{% url 'tienda:quitar' linea.item.pk %}">{% csrf_token %}<button type="submit" class="enlace-boton peligro">Quitar</button></form>
+        </div>
+      </article>
+    {% endfor %}
+    </div>
+    <aside class="panel resumen">
+      <h2>Resumen</h2>
+      {% if zona %}<p>{{ zona }}</p>{% endif %}
+      <a href="{% url 'tienda:inicio' %}">Cambiar zona</a>
+      {% if aviso %}<p class="texto-error" role="alert">{{ aviso }}</p>{% endif %}
+      {% include "tienda/_resumen.html" %}
+      {% if puede_confirmar %}<a class="boton ancho" href="{% url 'tienda:confirmar' carrito.pk %}">Continuar pedido</a>{% else %}<p class="nota">Revisa el carrito y la zona antes de continuar.</p>{% endif %}
+      <p class="nota">Los precios se verifican nuevamente al confirmar.</p>
+      <form method="post" action="{% url 'tienda:vaciar' carrito.pk %}">{% csrf_token %}<button type="submit" class="enlace-boton peligro">Vaciar este carrito</button></form>
+    </aside>
+  </div>
+  {% if mercado.activo %}<a class="volver" href="{% url 'tienda:catalogo' mercado.pk %}">Seguir comprando en este mercado</a>{% endif %}
+{% else %}
+  <div class="vacio"><p>Este carrito está vacío.</p>{% if mercado.activo %}<a class="boton" href="{% url 'tienda:catalogo' mercado.pk %}">Ver productos</a>{% else %}<a class="boton" href="{% url 'tienda:inicio' %}">Elegir otro mercado</a>{% endif %}</div>
+{% endif %}
+{% endblock %}

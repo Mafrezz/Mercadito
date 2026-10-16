@@ -1,0 +1,5 @@
+<div class="resumen-importes">
+  <p><span>Productos</span><strong>{% if subtotal is not None %}Q{{ subtotal|floatformat:"2u" }}{% else %}Por revisar{% endif %}</strong></p>
+  <p><span>Envío</span><strong>{% if costo_envio is not None %}Q{{ costo_envio|floatformat:"2u" }}{% else %}Sin cobertura{% endif %}</strong></p>
+  <p class="total"><span>Total</span><strong>{% if total is not None %}Q{{ total|floatformat:"2u" }}{% else %}Por calcular{% endif %}</strong></p>
+</div>

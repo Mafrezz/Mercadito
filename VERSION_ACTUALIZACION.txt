@@ -1,0 +1,7 @@
+Mercadito - actualización de compras
+Identificador: 2026.10.16-compras
+Migración de tienda incluida: 0002_completar_compra
+Funciones nuevas: registro, sesiones, carrito, pedidos e historial.
+Suite: 88 pruebas; 86 aprobadas en SQLite y 2 de concurrencia para PostgreSQL.
+Configuración normal: PostgreSQL (sin cambios en tus datos .env).
+Lee LEEME_ACTUALIZACION.txt antes de copiar los archivos.

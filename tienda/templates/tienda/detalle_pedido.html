@@ -1,0 +1,29 @@
+{% extends "tienda/base.html" %}
+{% block titulo %}Pedido #{{ pedido.pk }} | Mercadito{% endblock %}
+{% block contenido %}
+<a class="volver" href="{% url 'tienda:pedidos' %}">Volver a mis pedidos</a>
+<div class="item-encabezado"><h1 class="titulo-pagina">Pedido #{{ pedido.pk }}</h1><span class="estado">{{ pedido.get_estado_display }}</span></div>
+<p class="nota">Registrado el {{ pedido.creado|date:"d/m/Y H:i" }} · {{ pedido.mercado.nombre }}</p>
+<div class="compra-layout">
+  <section class="panel">
+    <h2>Productos del pedido</h2>
+    <ul class="detalle-breve">
+    {% for item in pedido.items.all %}
+      <li><span>{{ item.producto.nombre }}<small>{{ item.cantidad|floatformat:"-2u" }} {{ item.producto.get_unidad_display }} × Q{{ item.precio_unitario|floatformat:"2u" }}</small></span><strong>Q{{ item.subtotal|floatformat:"2u" }}</strong></li>
+    {% endfor %}
+    </ul>
+    <p class="nota">Los importes corresponden al momento de confirmar la compra.</p>
+  </section>
+  <aside class="panel resumen">
+    <h2>Entrega y pago</h2>
+    <dl class="datos-entrega">
+      <dt>Zona</dt><dd>{{ pedido.zona }}</dd>
+      <dt>Dirección</dt><dd>{{ pedido.direccion_entrega }}</dd>
+      <dt>Fecha de entrega</dt><dd>{{ pedido.fecha_entrega|date:"d/m/Y" }}</dd>
+      <dt>Método de pago</dt><dd>{{ pedido.get_metodo_pago_display }}</dd>
+    </dl>
+    {% include "tienda/_resumen.html" with subtotal=pedido.subtotal costo_envio=pedido.costo_envio total=pedido.total %}
+  </aside>
+</div>
+<a class="volver" href="{% url 'tienda:inicio' %}">Hacer otra compra</a>
+{% endblock %}
